@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  api:
+    container_name: test-sentry
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+      target: development
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    networks:
+      - asp-network
+    restart: always
+    
+volumes:
+  node_modules:
+
+networks:
+  asp-network:
+    driver: bridge
