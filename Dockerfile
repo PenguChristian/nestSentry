@@ -30,7 +30,7 @@ WORKDIR /usr/src/app/dist
 
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./
-COPY --chown=node:node .env ./.env
+# COPY --chown=node:node .env ./.env
 
 CMD [ "node", "main.js" ]
 
@@ -42,6 +42,6 @@ WORKDIR /usr/src/app/dist
 
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./
-COPY --chown=node:node .env ./.env
+# COPY --chown=node:node .env ./.env
 
 CMD [ "node", "main.js" ]
